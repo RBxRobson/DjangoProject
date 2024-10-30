@@ -16,6 +16,6 @@ def test_post_view(client):
     response = client.get(url)
     
     # Verifica se o código de status da resposta é 200 (OK) 
-    # e se a pagina tem como conteúdo Hello Word
+    # e se a pagina tem o conteúdo textual "Welcome to my awesome Blog"
     assert response.status_code == 200
-    assert response.content == b'Hello World'
+    assert b'Welcome to my awesome Blog' in response.content
